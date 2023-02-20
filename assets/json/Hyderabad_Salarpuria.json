@@ -1,0 +1,361 @@
+{
+    "layout": "Hyderabad_Salarpuria.png",
+    "AvailableNoOfSeats": 428,
+    "TotalNoOfSeats": 428,
+    "workstations": [
+        {
+            "_id": 1,
+            "AvailableNoOfSeats": 55,
+            "sizeOfSeat": {
+                "width": 13.75,
+                "height": 16.20
+            },
+            "startingXAxis": 261,
+            "startingXAxisOpposite": 401,
+            "startingYAxis": 153.9,
+            "lastYAxis": 219,
+            "selectedAreaXAxis": 261,
+            "selectedAreaXAxisOpposite": 401,
+            "selectedAreaYAxis": 153.9,
+            "partition": [],
+            "gapPosition": [
+                {
+                    "pillar": false,
+                    "startingPositon": 261,
+                    "startingPositonOpposite": 261,
+                    "pillarWidth": 5.4,
+                    "pillarHeight": 65
+                }
+            ],
+            "pillarPosition": [],
+            "subWorkStationArea": [
+                {
+                    "totalNoOfSeats": 40,
+                    "sizeOfSeat": {
+                        "width": 13.75,
+                        "height": 16.20
+                    },
+                    "tableAlignment": "horizentaly",
+                    "startingXAxis": 293.9,
+                    "startingXAxisOpposite": 374,
+                    "startingYAxis": 89,
+                    "AvailableNoOfSeats": 40,
+                    "lastYAxis": 219,
+                    "selectedAreaXAxis": 293.9,
+                    "selectedAreaXAxisOpposite": 374,
+                    "selectedAreaYAxis": 89,
+                    "partition": [],
+                    "gapPosition": [
+                        {
+                            "pillar": false,
+                            "startingPositon": 335,
+                            "startingPositonOpposite": 346.5,
+                            "pillarWidth": 11.5,
+                            "pillarHeight": 130
+                        }
+                    ],
+                    "pillarPosition": []
+                },
+                {
+                    "totalNoOfSeats": 7,
+                    "sizeOfSeat": {
+                        "width": 13.75,
+                        "height": 16.20
+                    },
+                    "tableAlignment": "horizentaly",
+                    "startingXAxis": 374,
+                    "startingXAxisOpposite": 401,
+                    "startingYAxis": 89,
+                    "AvailableNoOfSeats": 7,
+                    "lastYAxis": 153.79,
+                    "selectedAreaXAxis": 374,
+                    "selectedAreaXAxisOpposite": 401.5,
+                    "selectedAreaYAxis": 89,
+                    "partition": [],
+                    "gapPosition": [],
+                    "pillarPosition": [
+                        {
+                            "startingXPosition": 387.75,
+                            "startingXPositionOpposite": 401,
+                            "startingYPosition": 89,
+                            "pillarWidth": 13.75,
+                            "pillarHeight": 16.20
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "_id": 2,
+            "startingXAxis": 78,
+            "startingXAxisOpposite": 648.3,
+            "startingYAxis": 174.5,
+            "AvailableNoOfSeats": 373,
+            "lastYAxis": 229.4,
+            "sizeOfSeat": {
+                "width": 16,
+                "height": 13.7
+            },
+            "selectedAreaXAxis": 78,
+            "selectedAreaXAxisOpposite": 648.3,
+            "selectedAreaYAxis": 174.5,
+            "partition": [],
+            "gapPosition": [
+                {
+                    "pillar": false,
+                    "startingPositon": 78,
+                    "startingPositonOpposite": 78,
+                    "pillarWidth": 6.5,
+                    "pillarHeight": 54.9
+                },
+                {
+                    "pillar": false,
+                    "startingPositon": 132.5,
+                    "startingPositonOpposite": 150.05,
+                    "pillarWidth": 18,
+                    "pillarHeight": 48.9
+                }
+            ],
+            "pillarPosition": [],
+            "subWorkStationArea": [
+                {
+                    "totalNoOfSeats": 5,
+                    "sizeOfSeat": {
+                        "width": 13.75,
+                        "height": 16.25
+                    },
+                    "tableAlignment": "horizentaly",
+                    "startingXAxis": 150.5,
+                    "startingXAxisOpposite": 177.8,
+                    "startingYAxis": 174.5,
+                    "AvailableNoOfSeats": 5,
+                    "lastYAxis": 223.5,
+                    "selectedAreaXAxis": 150.5,
+                    "selectedAreaXAxisOpposite": 177.8,
+                    "selectedAreaYAxis": 174.5,
+                    "partition": [],
+                    "gapPosition": [],
+                    "pillarPosition": [
+                        {
+                            "startingXPosition": 164,
+                            "startingXPositionOpposite": 177.8,
+                            "startingYPosition": 174.5,
+                            "pillarWidth": 13.75,
+                            "pillarHeight": 16.25
+                        }
+                    ]
+                },
+                {
+                    "startingXAxis": 177.8,
+                    "startingXAxisOpposite": 625,
+                    "startingYAxis": 249,
+                    "AvailableNoOfSeats": 346,
+                    "lastYAxis": 427,
+                    "noOfSeatsInRow": 11,
+                    "sizeOfSeat": {
+                        "width": 13.75,
+                        "height": 16.20
+                    },
+                    "selectedAreaXAxis": 78,
+                    "selectedAreaXAxisOpposite": 625,
+                    "selectedAreaYAxis": 249,
+                    "partition": [
+                        {
+                            "startingPosition": 177,
+                            "startingPositionOpposite": 179,
+                            "width": 1.10,
+                            "height": 179
+                        },
+                        {
+                            "startingPosition": 264,
+                            "startingPositionOpposite": 266,
+                            "width": 1,
+                            "height": 179
+                        },
+                        {
+                            "startingPosition": 332,
+                            "startingPositionOpposite": 334,
+                            "width": 1,
+                            "height": 179
+                        },
+                        {
+                            "startingPosition": 399,
+                            "startingPositionOpposite": 401,
+                            "width": 1,
+                            "height": 179
+                        },
+                        {
+                            "startingPosition": 457,
+                            "startingPositionOpposite": 459,
+                            "width": 1,
+                            "height": 179
+                        },
+                        {
+                            "startingPosition": 515,
+                            "startingPositionOpposite": 516,
+                            "width": 1,
+                            "height": 179
+                        },
+                        {
+                            "startingPosition": 582,
+                            "startingPositionOpposite": 584,
+                            "width": 1,
+                            "height": 179
+                        }
+                    ],
+                    "gapPosition": [
+                        {
+                            "pillar": true,
+                            "startingPositon": 133,
+                            "startingPositonOpposite": 150.15,
+                            "pillarWidth": 17.20,
+                            "pillarHeight": 179
+                        },
+                        {
+                            "pillar": true,
+                            "startingPositon": 206,
+                            "startingPositonOpposite": 223.25,
+                            "pillarWidth": 17,
+                            "pillarHeight": 179
+                        },
+                        {
+                            "pillar": false,
+                            "startingPositon": 293,
+                            "startingPositonOpposite": 304.59,
+                            "pillarWidth": 11.6,
+                            "pillarHeight": 179
+                        },
+                        {
+                            "pillar": false,
+                            "startingPositon": 360,
+                            "startingPositonOpposite": 372.4,
+                            "pillarWidth": 11.8,
+                            "pillarHeight": 179
+                        },
+                        {
+                            "pillar": true,
+                            "startingPositon": 400,
+                            "startingPositonOpposite": 416.2,
+                            "pillarWidth": 15.3,
+                            "pillarHeight": 179
+                        },
+                        {
+                            "pillar": true,
+                            "startingPositon": 499,
+                            "startingPositonOpposite": 515,
+                            "pillarWidth": 15.3,
+                            "pillarHeight": 179
+                        },
+                        {
+                            "pillar": false,
+                            "startingPositon": 543,
+                            "startingPositonOpposite": 555,
+                            "pillarWidth": 11.8,
+                            "pillarHeight": 179
+                        },
+                        {
+                            "pillar": false,
+                            "startingPositon": 625,
+                            "startingPositonOpposite": 634.6,
+                            "pillarWidth": 9.5,
+                            "pillarHeight": 179
+                        }
+                    ],
+                    "pillarPosition": [
+                        {
+                            "startingXPosition": 78,
+                            "startingXPositionOpposite": 91.7,
+                            "startingYPosition": 297,
+                            "pillarWidth": 13.75,
+                            "pillarHeight": 16.20
+                        },
+                        {
+                            "startingXPosition": 78,
+                            "startingXPositionOpposite": 91.7,
+                            "startingYPosition": 410,
+                            "pillarWidth": 13.75,
+                            "pillarHeight": 16.20
+                        },
+                        {
+                            "startingXPosition": 163,
+                            "startingXPositionOpposite": 177.65,
+                            "startingYPosition": 410,
+                            "pillarWidth": 13.75,
+                            "pillarHeight": 16.20
+                        },
+                        {
+                            "startingXPosition": 265,
+                            "startingXPositionOpposite": 279.25,
+                            "startingYPosition": 410,
+                            "pillarWidth": 13.75,
+                            "pillarHeight": 16.20
+                        },
+                        {
+                            "startingXPosition": 386,
+                            "startingXPositionOpposite": 399.9,
+                            "startingYPosition": 410,
+                            "pillarWidth": 13.75,
+                            "pillarHeight": 16.20
+                        },
+                        {
+                            "startingXPosition": 516,
+                            "startingXPositionOpposite": 529.75,
+                            "startingYPosition": 410,
+                            "pillarWidth": 13.75,
+                            "pillarHeight": 16.20
+                        }
+                    ]
+                },
+                {
+                    "totalNoOfSeats": 10,
+                    "sizeOfSeat": {
+                        "width": 13.75,
+                        "height": 13.75
+                    },
+                    "tableAlignment": "vertically",
+                    "startingXAxis": 625,
+                    "startingXAxisOpposite": 648.3,
+                    "startingYAxis": 249,
+                    "AvailableNoOfSeats": 10,
+                    "lastYAxis": 419,
+                    "selectedAreaXAxis": 625,
+                    "selectedAreaXAxisOpposite": 648.3,
+                    "selectedAreaYAxis": 249,
+                    "partition": [],
+                    "gapPosition": [
+                        {
+                            "pillar": false,
+                            "startingPositon": 625,
+                            "startingPositonOpposite": 634.6,
+                            "pillarWidth": 9.5,
+                            "pillarHeight": 179
+                        }
+                    ],
+                    "pillarPosition": [
+                        {
+                            "startingXPosition": 634.6,
+                            "startingXPositionOpposite": 648.3,
+                            "startingYPosition": 249,
+                            "pillarWidth": 13.75,
+                            "pillarHeight": 19.25
+                        },
+                        {
+                            "startingXPosition": 634.6,
+                            "startingXPositionOpposite": 648.3,
+                            "startingYPosition": 296,
+                            "pillarWidth": 13.75,
+                            "pillarHeight": 12.75
+                        },
+                        {
+                            "startingXPosition": 634.6,
+                            "startingXPositionOpposite": 648.3,
+                            "startingYPosition": 232,
+                            "pillarWidth": 13.75,
+                            "pillarHeight": 12.75
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "layoutselectionalgorithm",
+  "version": "1.0.0",
+  "description": "For experiment with layout selection Algorithm in redbricks project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start:dev": "nodemon app.js"
+  },
+  "author": "Manprit Tiwari",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.2",
+    "pdfkit": "^0.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
