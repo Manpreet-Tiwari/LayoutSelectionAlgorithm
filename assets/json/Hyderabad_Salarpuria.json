@@ -5,6 +5,7 @@
     "workstations": [
         {
             "_id": 1,
+            "totalNoOfSeats": 55,
             "AvailableNoOfSeats": 55,
             "sizeOfSeat": {
                 "width": 13.75,

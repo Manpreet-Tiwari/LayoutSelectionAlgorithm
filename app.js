@@ -12,6 +12,7 @@ app.use('/generateLayout/:selectFrom/:requiredNoOfSeats', generateLayout);
 app.use((error, req, res, next) => {
     let status = error.status || 500;
     let message = error.message;
+    console.error(error);
     res.status(status).json({ "Message": message });
 });
 
