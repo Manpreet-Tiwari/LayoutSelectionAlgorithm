@@ -8,6 +8,11 @@ const proposal = Object.freeze(
     }
 )
 
+let selectedWorkStationData = [];
+let workStationSelectedData = {
+    subWorkStationArea: []
+};
+
 const generateLayout = (req, res, next) => {
     let selectFrom = req.params.selectFrom;
     let requiredNoOfSeats = req.params.requiredNoOfSeats;
@@ -68,6 +73,7 @@ const generateLayout = (req, res, next) => {
         // doc.image(path.join('assets', 'image', `${proposal.location}_${proposal.center}.png`), { height: 566, align: 'center', valign: 'center' });
         doc.image(`./assets/images/${proposal.location}_${proposal.center}.png`, { height: 566, align: 'center', valign: 'center' });
 
+
         markSeatsOnLayout = (workstationToSelect) => {
             if (workstationToSelect.workStationId) {
                 let workStationId = workstationToSelect.workStationId;
@@ -76,6 +82,29 @@ const generateLayout = (req, res, next) => {
                 let rowComplete = false;
                 let subWorkStationStarted = false;
                 let subWorkStationData;
+
+                workStationSelectedData.subWorkStationArea.forEach((element, index) => {
+                    if (element?.automaticSubWorkstation === true) {
+                        workStationData.subWorkStationArea.splice(index, 0, element);
+                    }
+                    else {
+                        workStationData.subWorkStationArea[index] = {
+                            ...workStationData.subWorkStationArea[index],
+                            ...element
+                        }
+                    }
+                    console.log('///////////////////////////////////////////////////////////////////////////////////////////////\n',element)
+                })
+
+                delete workStationSelectedData.subWorkStationArea;
+
+                workStationData = { ...workStationData, ...workStationSelectedData };
+
+                console.log('===========================================================================================\n', workStationData);
+
+                workStationSelectedData = {
+                    subWorkStationArea: []
+                };
 
                 // If it is defined to start the selection of seat from right then only it will only select from right otherwise from left side
                 if (selectFrom === 'right') {
@@ -332,6 +361,13 @@ const generateLayout = (req, res, next) => {
                 }
                 // starting the default selection of seat from left side.
                 else {
+
+                    // workStationSelectedData = {
+                    //     _id: workStationId,
+                    //     selectedAreaXAxis: workStationData.selectedAreaXAxis,
+                    //     selectedAreaYAxis: workStationData.selectedAreaYAxis
+                    // };
+
                     for (let i = 1; i <= requiredNoOfSeats; i++) {
                         // If row is completed
                         if (rowComplete === true) {
@@ -438,6 +474,7 @@ const generateLayout = (req, res, next) => {
                             }
                             // if row is not completed till now then it should select seat
                             else {
+                                console.log([workStationData.selectedAreaXAxis, workStationData.selectedAreaYAxis])
                                 doc.polygon(
                                     [workStationData.selectedAreaXAxis, workStationData.selectedAreaYAxis],
                                     [workStationData.selectedAreaXAxis + workStationData.sizeOfSeat.width, workStationData.selectedAreaYAxis],
@@ -455,6 +492,8 @@ const generateLayout = (req, res, next) => {
                         if (subWorkStationStarted === true) {
                             let subrowComplete;
                             let subWorkStationLastCheck = false;
+                            let selectedSubWorkStationData = {};
+                            let automaticGeneratedSubWorkStation = {};
                             for (let j = 1; j <= subWorkStationData.AvailableNoOfSeats; j++) {
                                 // if row completed in Sub-Workstation
                                 if (subrowComplete === true) {
@@ -573,6 +612,19 @@ const generateLayout = (req, res, next) => {
                                         subWorkStationLastCheck = true;
                                     }
                                     else {
+                                        if (subWorkStationData.startingXAxisOpposite > subWorkStationData.selectedAreaXAxis) {
+                                            automaticGeneratedSubWorkStation = {
+                                                ...subWorkStationData,
+                                                startingXAxis: subWorkStationData.selectedAreaXAxis + 800,
+                                                selectedAreaYAxis: subWorkStationData.selectedAreaYAxis - subWorkStationData.sizeOfSeat.height,
+                                                selectedAreaXAxis: subWorkStationData.selectedAreaXAxis,
+                                                automaticSubWorkstation: true,
+                                                AvailableNoOfSeats: subWorkStationData.AvailableNoOfSeats - j
+                                            }
+                                            if (subWorkStationData?.automaticSubWorkstation === true) automaticGeneratedSubWorkStation.startingXAxis = subWorkStationData.startingXAxis + 1;
+                                            subWorkStationData.selectedAreaXAxisOpposite = automaticGeneratedSubWorkStation.startingXAxis;
+                                            subWorkStationData.startingXAxisOpposite = automaticGeneratedSubWorkStation.startingXAxis;
+                                        }
                                         workStationData.selectedAreaXAxis = subWorkStationData.startingXAxisOpposite;
                                         subWorkStationLastCheck = false;
                                         break;
@@ -581,8 +633,27 @@ const generateLayout = (req, res, next) => {
                                 i++;
                             }
                             subWorkStationStarted = false;
+                            selectedSubWorkStationData = {
+                                selectedAreaXAxis: subWorkStationData.selectedAreaXAxis,
+                                selectedAreaYAxis: subWorkStationData.selectedAreaYAxis,
+                                selectedAreaXAxisOpposite: subWorkStationData.startingXAxisOpposite
+                            }
+
+                            workStationSelectedData.subWorkStationArea.push(selectedSubWorkStationData);
+                            if (Object.keys(automaticGeneratedSubWorkStation).length > 0) {
+                                workStationSelectedData.subWorkStationArea.push(automaticGeneratedSubWorkStation);
+                            }
+
                         }
+
                     }
+                    workStationSelectedData = {
+                        ...workStationSelectedData,
+                        _id: workStationId,
+                        selectedAreaXAxis: workStationData.selectedAreaXAxis,
+                        selectedAreaYAxis: workStationData.selectedAreaYAxis,
+                        AvailableNoOfSeats: workStationData.AvailableNoOfSeats - requiredNoOfSeats
+                    };
                 }
             }
         }
@@ -591,6 +662,8 @@ const generateLayout = (req, res, next) => {
             markSeatsOnLayout(element);
         })
         doc.end();
+
+        console.log("WORKSTATION_SELECTED_DATA => ", workStationSelectedData);
     }
     catch (err) {
         if (!err.status) err.status = 500;
